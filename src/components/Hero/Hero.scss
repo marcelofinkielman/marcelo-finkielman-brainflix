@@ -1,0 +1,10 @@
+@use '../styles/partials/mixins.scss' as *;
+@use '../styles/partials/variables.scss' as *;
+
+
+.heroImage {
+  object-fit: fill;
+  margin-top: 1rem;
+  min-height: 12.5rem;
+  width: 100%
+}

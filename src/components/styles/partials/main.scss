@@ -1,0 +1,606 @@
+@use './partials/variables' as *;
+@use './partials/mixin' as *;
+@use './partials/typography' as *;
+//@use './partials/typography' as *;
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: column;
+  background-color: $black;
+  max-height: 5rem;
+  max-width: 100%;
+  font-weight: 100;
+  align-items: center;
+  box-sizing: content-box;
+  @include tablet {
+    flex-direction: row;
+    height: 5rem;
+    max-width: 100%;
+  }
+
+  @include desktop {
+    padding-left: $desktop-spacing;
+  }
+
+  &__links a{
+    text-decoration: none;
+    color: $white;
+  }
+
+    &__logo {
+      @include flexcenter;
+      height: 1.875rem;
+      @include tablet {
+        margin-left: $tablet-spacing;
+        justify-content: center;
+        height: 10vh;
+        padding-bottom: 0.625rem;
+      }
+      @include desktop {
+        margin-left: 0;
+      }
+
+      & a {   
+         margin-top: 1.25rem;
+      }
+    }
+
+  &__links {
+    @include flexcenter;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1rem;
+    @include tablet {
+      margin-left: 5rem;
+      justify-content: left;
+      padding-left: 0;
+      padding-right: 0;
+      width: 4.688rem;
+      @include tabletdefault;
+    }
+    @include desktop {
+      & h2:nth-child(2) {
+      padding-left: 0
+      }
+    }
+
+    & h2{
+    @include flexcenter;
+    width: 50%;
+    margin-top: 0;
+    padding-bottom: 0.5rem;
+    @include tablet {
+      @include tabletdefault;
+      padding: 1.563rem;
+    }
+
+    &:nth-child(1) {
+        border-bottom: 0.25rem solid white;
+        margin-right: 3.5rem;
+    }
+
+    &:nth-child(2) {  
+      font-weight: 100;
+    }
+  }
+  }
+   @include mobileDefault;
+  }
+.hero {
+  font-family: 'avenir-bold';
+  @include flexcenter;
+  width: 100%;
+  max-height: auto;
+  position: relative;
+  justify-content: left;
+  &__img {
+    width: 100%;
+    height: 60vw;
+    background-size: cover;
+    @include tablet {
+      height: 52.1vw;
+    }
+  }   
+
+  &__overlay {
+    width: 100%;
+    height: 60vw;
+    position: absolute;
+    background-color: $black;
+    opacity: 50%;
+    @include tablet {
+      height: 52.1vw;
+    }
+  }
+
+    &__singers {
+      @include mobileMargin;
+      color: $white;
+      position: absolute;
+      font-size: 1.5rem;
+      width: 15rem;
+      max-height: 6.25rem;
+      @include tablet{
+        font-size: 3.9rem;
+        width: 31.25rem;
+        font-family: 'avenir-demi';
+        margin-left: $tablet-spacing;
+      }
+
+    @include desktop {
+      margin-left: 0;
+      margin-left: $desktop-spacing;
+      font-size: 3.8rem;
+    }    
+  }
+  @include mobileDefault 
+}
+
+.about-band {
+  &__title {
+    @include mobileMargin;
+    @include mobileDefault;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem; 
+    font-family: 'avenir-bold';
+    font-size: 1.8rem;
+    font-weight: bold;
+    @include tablet {
+      margin-left: $tablet-spacing;
+      font-size: 2.1rem;
+    }
+    @include desktop {
+      margin-left: 0;
+      margin-left: $desktop-spacing;
+    }
+  }
+
+  &__img {
+    @include mobileMargin;
+    @include tablet {
+      margin-left: $tablet-spacing;
+      margin-right: $tablet-spacing;  
+    }
+    @include desktop {
+      @include leftright;
+      margin-right: $desktop-spacing-about;
+      margin-left: $desktop-spacing-about;
+    }  
+      
+    & img {
+      width: 100%;
+      height: 45vw;
+      @include tablet {
+        width: 100%;
+        height: 48vw;
+      }
+      @include desktop {
+        width: 100%;
+        height: 32vw;
+     }
+    }
+  } 
+}
+
+.news {
+  display: flex;
+  flex-wrap: wrap;
+  @include mobileMargin;
+  @include tablet {
+    @include leftright;
+  }
+  @include desktop {
+    @include leftright;
+  }
+
+  &__quot {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-family: "avenir";
+    @include tablet {
+      margin-right: $tablet-spacing;
+      margin-left: $tablet-spacing;
+      font-size: 1.5rem;
+      line-height: 2.75rem;
+      font-family: 'avenir-bold';
+    }
+    @include desktop {
+      @include leftright;
+      @include desktopMargin2;
+      margin-left: $desktop-spacing-about;
+      margin-right: 18.5rem;
+      margin-top: 3rem;
+      font-size: 1.4rem;
+      font-family: 'avenir-bold';
+      }
+    }
+
+  &__singer-name {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    font-family: 'avenir-demi';
+    @include tablet {
+      margin-left: $tablet-spacing;
+      font-size: 1rem;
+    }
+    @include desktop {
+      @include leftright;
+      margin-left: $desktop-spacing-about;
+      margin-top: 1.5rem;
+    }
+  }
+    
+  &__singers {
+    font-family: 'avenir';
+    font-size: 1.2rem;
+    @include tablet {
+      margin-left: $tablet-spacing;
+      margin-bottom: 0;
+      font-size: 1.563rem;
+      font-family: 'avenir-demi';
+    } 
+    @include desktop {
+      @include leftright;
+      margin-left: $desktop-spacing-about;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      font-family: 'avenir-bold';
+      }  
+    }
+
+  &__text {
+    font-size: 0.94rem;
+    line-height: 1.25rem;
+    @include tablet {
+      margin-left: 0.625rem;
+      display: flex;
+      flex-direction: row;
+      & p {
+        margin-left: 0.625rem;
+        margin-right: 1.5rem;
+      }
+    @include desktop {
+      @include leftright;
+      @include desktopMargin2;
+      font-size: 0.78rem;
+      & p:nth-child(1) {
+        margin-left: 0;
+      }
+      & p:nth-child(2) {
+        margin-right: 0;
+      }
+    }
+  }
+  }
+}
+
+.gallery {
+  & h2 {
+    font-size: 2.3rem;
+    margin-top: 3.688rem;
+    margin-bottom: 1.5rem;
+    font-family: 'avenir-bold'
+  }
+  @include mobileMargin;
+  @include tablet {
+    @include leftright;
+    }
+    @include tablet {
+    margin: $tablet-spacing;
+    }
+    @include desktop {
+      @include leftright;
+      @include desktopMargin;
+    }
+
+  &__pics {
+    width: 100%;
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    & img {
+      width: 100%;
+      height: 60vw;
+      margin-bottom: 1rem;
+      @include tablet {
+        width: 31.8%;
+        height: 17.5vw;
+      }
+      @include desktop {
+        width: 31.8%;
+        height: 13.4vw;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+.comments{
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 40px;
+  
+  &__header {
+    font-size: 25px;
+    font-family: 'avenir-bold' ;
+    margin-bottom: 40px;
+    margin-top: 56px;
+    @include tablet {
+      font-size: 35px;
+    }
+    @include desktop {
+      margin-left: 160px ;
+      font-size: 30px;
+      
+    }
+  }
+  &__form {
+    position: relative;
+    height: auto;
+    padding-bottom: 32px;
+    border-bottom: 1px solid $silver;
+    @include tablet {
+      margin-left: 120px;
+      margin-right: 120px;
+      }
+
+      @include desktop {
+        margin-left: 375px;
+      margin-right: 375px;
+      }
+    }
+    &__divName {
+      display: flex;
+      flex-direction: row;
+      margin-top: 20px;
+      justify-content: space-between;
+      position: relative;
+    }
+    &__profile {
+       height: 55px;
+       border-radius: 50%;
+       margin-right: 20px;
+      }
+      
+    &__labelName {
+        position: absolute;
+        left: 86px;
+        bottom: 55px;
+        color: #AFAFAF;
+        font-weight: bold;
+      } 
+  &__input1 {
+        height: 40px;
+        width: 100%;
+        margin-top: 5px;
+        border-radius: 4px;
+        border: 3px solid $black;
+      }
+    
+
+ &__divComment {
+      width: auto;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      margin-left: 80px;
+      align-items: flex-end;
+ }
+      &__labelComment {
+        color: $silver;
+        font-weight: bold;
+        align-self: flex-start;
+      }
+      
+      &__input2 {
+        border: 1px solid $silver;
+        height: 80px;
+        align-self: stretch;
+      }
+
+      &__commentButton {
+      background-color: $black;
+      color: $white;
+      width: 100%;
+      height: 50px;
+      margin-top: 12px;
+      border: none;
+      border-radius: 4px;
+      
+      @include tablet {
+        width: 200px;
+        
+        
+      }
+     }
+    
+    
+  
+  &__allComments {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 5px;
+    @include tablet {
+      margin-left: 120px;
+      margin-right: 120px;
+      }
+
+      @include desktop {
+        margin-left: 375px;
+      margin-right: 375px;
+      }
+    }
+  &__commentContainer {
+      border-bottom: 1px solid $silver;
+      flex-direction: row;
+      display: flex;
+  } 
+
+  &__grayCircle {
+        background-image: none;
+    background-color: $silver;
+    border-radius: 50%;
+    height: 2.5em;
+    min-width: 2.5em;
+    margin-top: 20px;
+    margin-right: 10px;
+      }
+
+  &__containAll {
+        width: 100%;
+        
+}
+  &__nameDate {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        @include tablet {
+          justify-content: unset;
+        }
+         }
+        &__name {
+        font-weight: bold;
+        @include tablet {
+          margin-right: 20px;
+        }
+        }
+
+        &__date {
+        color: $silver;
+        }
+
+      &__commentary {
+  
+      font-size: 17.5px;
+      margin-top: 0%;
+    }
+  }
+
+.footer {
+  color: $white;
+  background-color: $black;
+  padding-left: 0.625rem;
+  padding-top: 1.25rem;
+  @include tablet {
+    padding: 1.5rem;
+  }
+
+  &__title {
+     margin-right: 3.125rem;
+    }
+
+  &__title h2 {
+    font-size: 2.5rem;
+    font-family: 'avenir-demi';
+  }
+
+   &__items {
+    display: flex;
+    margin-left: 0.625rem;
+    width: 7.5rem;
+    justify-content: space-between;
+    margin-bottom: 2.375rem;
+    height: 1.375rem;
+    @include tablet {
+      margin-bottom: 0;
+      padding-right: 6.875rem;
+    }
+    @include desktop {
+      margin-left: 1.75rem;
+    }
+  }
+
+
+
+  &__call {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    @include desktop {
+      display: flex;
+      justify-content: flex-start;
+
+    &--logo {
+    position: absolute;
+    right: 11.25rem;
+    align-items: flex-end;
+
+  } 
+}
+    &--logo {
+    @include mobile {
+      display: none;
+    }
+    @include tablet {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  }
+
+  &__info {
+    @include tablet {
+      display: flex;
+      flex: row;
+      justify-content: space-between;
+    }
+
+  &__cards {
+    @include mobfoot;
+    @include mobileDefault;
+    @include footer;
+    font-size: 0.875rem;
+    @include tablet {
+      font-size: 1rem;
+    }
+    @include desktop {
+      font-size: 0.875rem;
+    }
+    
+
+  &--copyright {
+    font-size: 0.85rem;
+    @include mobile {
+    width: 15rem;
+    }
+    padding-bottom: 1.875rem;
+    & p:nth-child(1) {
+      margin-bottom: 0;
+    }
+    & p:nth-child(2) {
+      margin-top: 0;
+      @include tablet {
+        justify-content: left;
+      }
+    }
+  }
+  }
+  @include desktop {  
+  width: 50rem;
+  margin-top: 1.438rem;
+  }
+  }
+  @include desktop {
+  padding: 0.938rem 0;
+  @include desktopPadding;
+  }}

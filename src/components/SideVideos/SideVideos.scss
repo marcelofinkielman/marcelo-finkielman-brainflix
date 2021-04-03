@@ -1,0 +1,61 @@
+@use '../styles/partials/mixins.scss' as *;
+@use '../styles/partials/variables.scss' as *;
+
+.sideVideos {
+  margin-left: 1rem;
+
+  
+  &__video {
+  display: flex;
+  justify-content: center;
+  }
+
+  &__sideVideo {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1.5rem;
+    @include tablet {
+      margin-left: .5rem;
+    }
+    @include desktop{
+      justify-content: flex-end;
+      margin-right: 9.75rem;
+    }
+  }
+
+  &__title {
+    color: $silver;
+    display: flex;
+    @include tablet {
+      margin-left: .5rem;
+    }
+    @include desktop {
+      justify-content: flex-end;
+      margin-right: 21.875rem;
+    }
+  }
+
+  &__img {
+    margin-right: 1rem;
+    min-width: 7.5rem;
+    height: 4.375rem;
+    border-radius: 5px;
+  }
+
+  &__titleAndChannel {
+    display: flex;
+    flex-direction: column;
+    width: 13.75rem;
+    max-height: 3.125rem;
+  }
+
+  &__videoTitle {
+    margin: 0;
+    
+    
+  }
+
+  &__videoChannel {
+    margin: 0;
+  }
+}
