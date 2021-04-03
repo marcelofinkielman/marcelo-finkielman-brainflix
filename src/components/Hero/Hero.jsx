@@ -13,4 +13,4 @@ function HeroImage({video}) {
   )
 }
 
-export default HeroImage
+
