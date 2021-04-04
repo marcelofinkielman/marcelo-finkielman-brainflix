@@ -5,29 +5,28 @@
 .comments{
   margin-left: 1rem;
   margin-right: 1rem;
-  margin-bottom: 2.5rem;
+  
   
   &__form {
     position: relative;
     height: auto;
     padding-bottom: 2rem;
-    border-bottom: 1px solid $silver;
+    border-bottom: 2px solid $mercury;
     display: flex;
     flex-direction: row;
     @include tablet {
-      margin-left: 7.5rem;
-      margin-right: 7.5rem;
+      @include tabletMargin;
       }
 
       @include desktop {
-        margin-left: 23.438rem;
+      margin-left: 23.438rem;
       margin-right: 23.438rem;
       }
     }
     &__divProfile {
       display: flex;
       flex-direction: row;
-      margin-top: 3.125rem;
+      margin-top: 1.98rem;
       justify-content: space-between;
       position: relative;
       @include tablet {
@@ -36,7 +35,7 @@
     }
     &__profile {
       @include profilePicture;
-
+      
       }
     
  &__divComments {
@@ -67,6 +66,12 @@
         padding: 1.25rem 0 0 0.938rem;
         margin-top: 0.625rem;
         height: 7.5rem;
+        border: 3px solid $brainflix-light-blue;
+        &::placeholder {
+          font-weight: 300;
+          color: black;
+          font-size: 13.5px;
+        }
         
         @include tablet {
           height: 3.125rem;

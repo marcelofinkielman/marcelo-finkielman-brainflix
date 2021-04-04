@@ -6,27 +6,37 @@ import Views from "../../assets/icons/Icon-views.svg"
 
 
 function Hero({ video }) {
-  const videoDate = new Date(video.timestamp) 
- 
+  const videoDate = new Date(video.timestamp)
+
   return (
-    
+
     <div>
-      <video poster={video.image} className="Hero" controls>
+      <video poster={video.image} className="hero" controls>
       </video>
-      <h1>{video.title}</h1>
-      <div>
-        <h2>By {video.channel}</h2>
-       <h2>{videoDate.toLocaleDateString()}</h2>
+      <div className="hero__videoDescription">
+        <h1 className="hero__title">{video.title}</h1>
+        <div className="hero__channelDateViewsLikes">
+          <div className='hero__channelAndDate'>
+            <h3 className="hero__channel">By {video.channel}</h3>
+            <p className="hero__date">{videoDate.toLocaleDateString()}</p>
+          </div>
+          <div className="hero__viewsAndLikes">
+            <div className='hero__iconAndNumber1'>
+              <img src={Views} alt='views' className="hero__viewsIcon" /> <span className='hero__views'>{video.views}</span>
+            </div>
+            <div className='hero__iconAndNumber2'>
+              <img src={Likes} alt='likes' className="hero__likesIcon" /> <span className='hero__likes'>{video.likes}</span>
+            </div>
+          </div>
+        </div>
+        <div className='hero__description'>
+          {video.description}
+        </div>
+        <h3>3 COMMENTS</h3>
       </div>
-      <div>
-        <img src={Views} alt='views'/> {video.views}
-        <img src={Likes} alt='likes'/>{video.likes}
-      </div>
-      <div>
-      {video.description}
-      </div>
-      <h3>3 COMMENTS</h3>
-      
+
+
+
     </div>
   )
 }

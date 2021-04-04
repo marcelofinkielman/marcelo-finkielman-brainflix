@@ -14,7 +14,7 @@ function NavBar() {
       <input className="navBar__searchArea" placeholder={"Search"} />
         {/* <input className="navBar__searchArea" type="search"/> */}
         <div className='navBar__buttonAndPicture'>
-          <button className="navBar__button"><img className="navBar__X" src={Upload} alt="BigCo Inc." />UPLOAD</button>
+          <button className="navBar__button"><img className="navBar__X" src={Upload} alt="BigCo Inc." /><span className='navBav__upload'>UPLOAD</span></button>
           <img className="navBar__profile" src={Profile} alt="BigCo Inc. logo" />
         </div>
       </div>
