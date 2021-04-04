@@ -33,7 +33,14 @@ class App extends React.Component {
         <section className='sideVideos'>
           <h2 className = 'sideVideos__title'>Next Videos</h2>
           {
-            this.state.nextVideos.filter(video => video.id !== this.state.mainVideo.id).map((video) => <SideVideos key={video.id} image={video.image} title={video.title} channel={video.channel} id={video.id} updateVideo={this.updateVideo} />)
+            this.state.nextVideos.filter(video => video.id !== this.state.mainVideo.id)
+            .map((video) => <SideVideos 
+            key={video.id} 
+            image={video.image} 
+            title={video.title} 
+            channel={video.channel} 
+            id={video.id} 
+            updateVideo={this.updateVideo} />)
           }
         </section>
       </div>

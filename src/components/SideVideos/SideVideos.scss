@@ -1,6 +1,7 @@
 @use '../styles/partials/mixins.scss' as *;
 @use '../styles/partials/variables.scss' as *;
 
+
 .sideVideos {
   margin-left: 1rem;
 
@@ -45,7 +46,7 @@
   &__titleAndChannel {
     display: flex;
     flex-direction: column;
-    width: 13.75rem;
+    width: 13.5rem;
     max-height: 3.125rem;
   }
 
