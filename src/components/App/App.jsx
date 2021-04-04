@@ -1,7 +1,8 @@
 import React from 'react';
 import NavBar from '../NavBar/NavBar';
-import HeroImage from '../Hero/Hero';
+import Hero from '../Hero/Hero';
 import InputComment from '../InputComment/InputComment';
+import DefaultComments from '../DefaultComments/DefaultComments';
 import mainVideos from '../../data/video-details.json';
 import sideVideos from '../../data/videos.json';
 import SideVideos from '../SideVideos/SideVideos'
@@ -28,12 +29,14 @@ class App extends React.Component {
     return (
       <div className="App">
         <NavBar />
-        <HeroImage video={this.state.mainVideo} />
+        <Hero video={this.state.mainVideo} />
         <InputComment />
+        <DefaultComments mainVideo={this.state.mainVideo}/>
         <section className='sideVideos'>
           <h2 className = 'sideVideos__title'>Next Videos</h2>
           {
-            this.state.nextVideos.filter(video => video.id !== this.state.mainVideo.id)
+            this.state.nextVideos
+            .filter(video => video.id !== this.state.mainVideo.id)
             .map((video) => <SideVideos 
             key={video.id} 
             image={video.image} 

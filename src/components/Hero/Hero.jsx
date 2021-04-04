@@ -1,20 +1,22 @@
 import React from 'react'
-import "../../components/Hero/Hero.scss"
+import "./Hero.scss"
 import Likes from "../../assets/icons/Icon-likes.svg"
 import Views from "../../assets/icons/Icon-views.svg"
-import SideVideos from '../SideVideos/SideVideos'
 
 
-function HeroImage({ video }) {
+
+function Hero({ video }) {
+  const videoDate = new Date(video.timestamp) 
+ 
   return (
     
     <div>
-      <video poster={video.image} className="heroImage" controls>
+      <video poster={video.image} className="Hero" controls>
       </video>
       <h1>{video.title}</h1>
       <div>
-        <h2>{video.channel}</h2>
-       <h2>{video.timestamp}</h2>
+        <h2>By {video.channel}</h2>
+       <h2>{videoDate.toLocaleDateString()}</h2>
       </div>
       <div>
         <img src={Views} alt='views'/> {video.views}
@@ -24,9 +26,9 @@ function HeroImage({ video }) {
       {video.description}
       </div>
       <h3>3 COMMENTS</h3>
-
+      
     </div>
   )
 }
 
-export default HeroImage
+export default Hero

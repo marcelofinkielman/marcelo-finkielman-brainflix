@@ -18,7 +18,6 @@ function InputComment() {
           <button className='comments__commentButton'>COMMENT</button>
         </div>
       </form>
-
     </div>
 
   )
