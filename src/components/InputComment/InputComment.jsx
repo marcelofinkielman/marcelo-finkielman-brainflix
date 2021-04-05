@@ -12,7 +12,7 @@ function InputComment() {
         <div className='comments__divComments'>
           <div className='comments__labelAndInput'>
             <label className='comments__labelComments' >JOIN THE CONVERSATION </label>
-            <textarea className='comments__input' placeholder='That was easily the most spectacular BMX moment ever.'></textarea>
+            <textarea className='comments__input' placeholder='Write comment here.'></textarea>
           </div>
           <button className='comments__commentButton'>COMMENT</button>
         </div>
