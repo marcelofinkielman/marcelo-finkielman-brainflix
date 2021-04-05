@@ -2,31 +2,46 @@
 @use '../styles/partials/variables.scss' as *;
 
 
-
-
-
 .navBar {
   padding: 0;
   margin: 0;
-  @include mobileMargin;
   display: flex;
   flex-direction: column;
   position: relative;
   @include tablet{
-    @include tabletMargin;
+    
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     @include desktop {
-      margin-left: 156px;
-      margin-right: 156px;
+      
     }
   }
 
+  &__topComponents{
+    @include mobileMargin;
+    align-items: center;
+    @include tablet {
+      @include tabletMargin;
+      display:flex;
+      flex-direction: row;
+      @include desktop {
+        margin-left: 156px;
+      margin-right: 156px;
+      }
+    }
+  }
+
+  &__logoContainer {
+    display: flex;
+    justify-content: center;
+  }
+
   &__logo {
-    align-self: center;
+  
     width: 7.5rem;
    height: 3rem;
+   
    @include tablet {
      align-self: baseline;
      margin-top: 1rem;
@@ -93,4 +108,36 @@
       margin-left: 1.5rem;
     }
   }
+
+  &__background {
+    margin-top: 16px;
+    background-color: black;
+   
+    @include tablet {
+    }
+    @include desktop {
+    }
+  }
+
+  &__heroPicture {
+    object-fit: cover;
+    display: block;
+    width: 100%;
+    min-height: 183px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    @include tablet {
+      margin: auto;
+      max-width: 700px;
+      min-height: 400px;
+    }
+    @include desktop {
+      height: 540px;
+      max-width: 850px;
+    }
+  } 
+  
+  
+
 }

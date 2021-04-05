@@ -4,6 +4,8 @@
 
 .sideVideos {
   margin-left: 1rem;
+  @include desktop {
+  }
 
   
   &__video {
@@ -32,7 +34,10 @@
     }
     @include desktop {
       justify-content: flex-end;
-      margin-right: 21.875rem;
+      margin-right: 26rem;
+      margin-top: 48px;
+      margin-bottom: 40px;
+      font-size: 16px;
     }
   }
 

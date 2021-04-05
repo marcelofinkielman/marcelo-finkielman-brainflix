@@ -5,6 +5,9 @@
 .comments{
   margin-left: 1rem;
   margin-right: 1rem;
+  @include desktop {
+    margin-right: 0;
+  }
   
   
   &__form {
@@ -15,13 +18,14 @@
     display: flex;
     flex-direction: row;
     @include tablet {
-      @include tabletMargin;
-      }
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+    @include desktop {
+      margin-right: 0;
+      padding-right: 30px;
+    }
 
-      @include desktop {
-      margin-left: 23.438rem;
-      margin-right: 23.438rem;
-      }
     }
     &__divProfile {
       display: flex;
@@ -59,6 +63,7 @@
         
       }
       
+      
       &__input {
         
         @include searchBar;
@@ -66,7 +71,7 @@
         padding: 1.25rem 0 0 0.938rem;
         margin-top: 0.625rem;
         height: 7.5rem;
-        border: 3px solid $brainflix-light-blue;
+        
         &::placeholder {
           font-weight: 300;
           color: black;

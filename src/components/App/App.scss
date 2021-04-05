@@ -1,0 +1,22 @@
+@use '../styles/partials/mixins.scss' as *;
+@use '../styles/partials/variables.scss' as *;
+
+.app {
+
+  &__bottomComponents {
+    @include desktop{
+    display: flex;
+  flex-direction: row;
+  margin-left: 120px;
+      
+  }
+}
+  &__commentsComponent {
+  @include desktop {
+    width: 700px;
+    border-right: 2px solid $mercury;
+  }
+  }
+  
+
+}

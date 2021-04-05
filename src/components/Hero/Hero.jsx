@@ -10,10 +10,9 @@ function Hero({ video }) {
 
   return (
 
-    <div>
-      <video poster={video.image} className="hero" controls>
-      </video>
+    <div className='hero'>
       <div className="hero__videoDescription">
+      
         <h1 className="hero__title">{video.title}</h1>
         <div className="hero__channelDateViewsLikes">
           <div className='hero__channelAndDate'>

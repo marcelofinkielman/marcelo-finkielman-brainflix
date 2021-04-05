@@ -4,7 +4,7 @@ import "./DefaultComments.scss"
 
 function DefaultComments({ mainVideo }) {
   return (
-    <div className=''>
+    <div>
       {mainVideo.comments.map((comment) => {
         const commentDate = new Date(comment.timestamp);
         return (
@@ -18,7 +18,7 @@ function DefaultComments({ mainVideo }) {
                   <h4 className='DefaultComments__name'>{comment.name}</h4>
                   <span className="DefaultComments__date">{commentDate.toLocaleDateString()}</span>
                 </div>
-                <p>{comment.comment}</p>
+                <p className='DefaultComments__comment'>{comment.comment}</p>
               </div>
             </div>
           </>

@@ -6,6 +6,13 @@
   flex-direction: row;
   border-bottom: 2px solid $mercury;
   @include mobileMargin;
+  @include tablet {
+    @include tabletMargin;
+    @include desktop {
+      margin-right: 0;
+      padding-right: 30px;
+    }
+  }
 
 
   &__profileContainer {
@@ -27,5 +34,11 @@
     margin-bottom: 0;
     margin-top: 22px;
     color: $silver;
+  }
+
+  &__comment {
+    @include desktop {
+      font-size: 13px;
+    }
   }
 }
