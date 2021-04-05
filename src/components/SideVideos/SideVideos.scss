@@ -1,6 +1,6 @@
 @use '../styles/partials/mixins.scss' as *;
 @use '../styles/partials/variables.scss' as *;
-
+@use '../styles/partials/typography.scss';
 
 .sideVideos {
   margin-left: 1rem;
@@ -29,6 +29,7 @@
   &__title {
     color: $silver;
     display: flex;
+    
     @include tablet {
       margin-left: .5rem;
     }
@@ -53,12 +54,15 @@
     flex-direction: column;
     width: 13.5rem;
     max-height: 3.125rem;
+    font-family: 'Avenir';
+    padding-top: 5px;
     
   }
 
   &__videoTitle {
     margin: 0;
     font-size: 1rem;
+    margin-bottom: 5px;
     
   }
 

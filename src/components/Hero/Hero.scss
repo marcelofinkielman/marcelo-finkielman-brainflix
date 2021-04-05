@@ -1,6 +1,6 @@
 @use '../styles/partials/mixins.scss' as *;
 @use '../styles/partials/variables.scss' as *;
-
+@use '../styles/partials/typography.scss';
 
 
 .hero {
@@ -23,8 +23,9 @@
 
   &__videoDescription {
     @include mobileMargin;
+    font-family: 'Avenir';
     @include tablet {
-      @include tabletMargin;
+    @include tabletMargin;
     }
     @include desktop {
       margin-right: 0;
@@ -82,9 +83,10 @@
   &__views {
     margin-right: 20px;
     font-size: 1em;
+    padding-top: 3px;
     @include tablet {
       margin-right: 24px;
-      padding-top: 3px;
+      padding-top: 8px;
     }
   }
 
@@ -95,9 +97,9 @@
   &__likes {
     font-size: 1em;
     padding-bottom: 3px;
-
+    padding-top: 3px;
     @include tablet {
-      padding-top: 3px;
+      padding-top: 8px;
     }
   }
 
@@ -106,8 +108,9 @@
     margin-bottom: 40px;
     font-size: .855rem;
     font-weight: 320;
+    line-height: 24px;
     @include tablet {
-      font-size: .95rem;
+      font-size: .9rem;
       width: 535px;
     }
   }

@@ -1,5 +1,5 @@
 @use "../partials/variables.scss" as *;
-
+@use "./typography.scss" as *;
 
 @mixin flexcenter {
   display: flex;

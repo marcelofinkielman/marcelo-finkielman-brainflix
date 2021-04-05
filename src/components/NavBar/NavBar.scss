@@ -1,6 +1,6 @@
 @use '../styles/partials/mixins.scss' as *;
 @use '../styles/partials/variables.scss' as *;
-
+@use '../styles/partials/typography.scss';
 
 .navBar {
   padding: 0;
@@ -93,6 +93,7 @@
     @include tablet {
     margin-left: 1.5rem;
     width: 18.75rem;
+    font-family: 'Avenir';
     }
   }
 
