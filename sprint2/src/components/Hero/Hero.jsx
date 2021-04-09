@@ -4,14 +4,14 @@ import Likes from "../../assets/icons/Icon-likes.svg"
 import Views from "../../assets/icons/Icon-views.svg"
 import MainVideo from "../MainVideo/MainVideo"
 
-
+//test
 //hero section is every detail about the videos (video has its own section)
 function Hero({ video }) {
   const videoDate = new Date(video.timestamp)
 console.log ({video})
   return (
     <div className='hero'>
-    <MainVideo video={video.image}/>
+    
       <div className="hero__videoDescription">
         <h1 className="hero__title">{video.title}</h1>
         <div className="hero__channelDateViewsLikes">

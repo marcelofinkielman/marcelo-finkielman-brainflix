@@ -5,7 +5,7 @@ import "./DefaultComments.scss"
 function DefaultComments({ mainVideo }) {
   return (
     <div>
-      {mainVideo.comments.map((comment) => {
+      {!!mainVideo.comments && mainVideo.comments.map((comment) => {
         const commentDate = new Date(comment.timestamp);
         return (
           <>

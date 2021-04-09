@@ -8,16 +8,18 @@ import Upload from "../Pages/Upload/Upload";
 
 
 class App extends React.Component {
-  
+
   render() {
     return (
       <>
-      <NavBar />
         <BrowserRouter>
-        <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/upload' component={Upload} />
-        </Switch>
+          <NavBar />
+          <Switch>
+            <Route path='/' exact component={Home} />
+            <Route path='/videos/:id' />
+            <Route path='/upload' component={Upload} />
+          </Switch>
+
         </BrowserRouter>
       </>
     );

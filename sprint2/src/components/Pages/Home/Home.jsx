@@ -11,29 +11,42 @@ import './Home.scss'
 import axios from 'axios';
 
 
-class App extends React.Component {
+class Home extends React.Component {
   state = {
-    mainVideo: mainVideos[0],
-    nextVideos: sideVideos,
+    mainVideo: {},
+    nextVideos: [],
   }
 
-  updateVideo = (videoId) => {
-    this.setState({
-      mainVideo: mainVideos.find(video => video.id === videoId),
-      nextVideos: sideVideos,
-    })
-  };
+  componentDidMount() {
+    let APIKey = "?api_key=51253446-3783-4af2-b6fe-0482bc5ecb07"
+    let APIUrl = "https://project-2-api.herokuapp.com"
+    let endPoint = "/videos"
+    axios.get(APIUrl + endPoint + APIKey)
+      .then(res => {
+        console.log(res.data);
+        this.setState({ nextVideos: res.data})
+      })
+      .then (res => {
+        const firstId = this.state.nextVideos[0].id
+        console.log(firstId)
+        axios.get(APIUrl + endPoint + "/" + firstId + APIKey)
+        .then(res => {
+          console.log (res)
+          this.setState ({mainVideo: res.data})
+        })
+      })
+  }
 
-  render = () => {
+  render() {
     console.log(this.state.mainVideo)
     return (
       <div className="app">
-        <MainVideo video={this.state.image} />
+        <MainVideo video={this.state.mainVideo.image} />
         <div className='app__bottomComponents'>
           <div className='app__commentsComponent'>
             <Hero video={this.state.mainVideo} />
             <InputComment />
-            <DefaultComments mainVideo={this.state.mainVideo} />
+             <DefaultComments mainVideo={this.state.mainVideo} />
           </div>
           <div>
             <section className='sideVideos'>
@@ -56,17 +69,6 @@ class App extends React.Component {
     );
   }
 
-  componentDidMount() {
-    let APIKey = "?api_key=51253446-3783-4af2-b6fe-0482bc5ecb07"
-    let APIUrl = "https://project-2-api.herokuapp.com"
-    let endPoint ="/videos"
-    axios.get(APIUrl + endPoint + APIKey)
-    .then(res => {
-      console.log(res.data);
-      this.setState({nextVideos: res.data})
-    })
-  }
-
 }
 
-export default App;
+export default Home;
