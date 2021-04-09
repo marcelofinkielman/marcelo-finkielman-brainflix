@@ -13,12 +13,12 @@ class App extends React.Component {
     return (
       <>
       <NavBar />
-        <BrowserRouter />
+        <BrowserRouter>
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/upload' component={Upload} />
         </Switch>
-        <BrowserRouter />
+        </BrowserRouter>
       </>
     );
   }

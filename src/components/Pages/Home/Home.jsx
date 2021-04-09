@@ -5,8 +5,10 @@ import DefaultComments from '../../DefaultComments/DefaultComments';
 import mainVideos from '../../../data/video-details.json';
 import sideVideos from '../../../data/videos.json';
 import SideVideos from '../../SideVideos/SideVideos'
+import MainVideo from "../../MainVideo/MainVideo"
 import '../../SideVideos/SideVideos.scss'
 import './Home.scss'
+import axios from 'axios';
 
 
 class App extends React.Component {
@@ -26,6 +28,7 @@ class App extends React.Component {
     console.log(this.state.mainVideo)
     return (
       <div className="app">
+        <MainVideo video={this.state.image} />
         <div className='app__bottomComponents'>
           <div className='app__commentsComponent'>
             <Hero video={this.state.mainVideo} />
@@ -51,6 +54,17 @@ class App extends React.Component {
         </div>
       </div>
     );
+  }
+
+  componentDidMount() {
+    let APIKey = "?api_key=51253446-3783-4af2-b6fe-0482bc5ecb07"
+    let APIUrl = "https://project-2-api.herokuapp.com"
+    let endPoint ="/videos"
+    axios.get(APIUrl + endPoint + APIKey)
+    .then(res => {
+      console.log(res.data);
+      this.setState({nextVideos: res.data})
+    })
   }
 
 }
