@@ -110,34 +110,7 @@
     }
   }
 
-  &__background {
-    margin-top: 16px;
-    background-color: black;
-   
-    @include tablet {
-    }
-    @include desktop {
-    }
-  }
-
-  &__heroPicture {
-    object-fit: cover;
-    display: block;
-    width: 100%;
-    min-height: 183px;
-    margin-left: 0;
-    margin-right: 0;
-    padding: 0;
-    @include tablet {
-      margin: auto;
-      max-width: 700px;
-      min-height: 400px;
-    }
-    @include desktop {
-      height: 540px;
-      max-width: 850px;
-    }
-  } 
+  
   
   
 

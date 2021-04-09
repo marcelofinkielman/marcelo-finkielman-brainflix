@@ -5,13 +5,13 @@ import Profile from "../../assets/images/Mohan-muruge.jpg"
 import "../NavBar/NavBar.scss"
 
 
-function NavBar({ video }) {
+function NavBar(/* { video } */) {
   return (
     <nav className='navBar'>
       <div className='navBar__topComponents'>
-      <div className='navBar__logoContainer'>
-        <img className="navBar__logo" src={Logo} alt="BigCo Inc. logo" />
-      </div>
+        <div className='navBar__logoContainer'>
+          <img className="navBar__logo" src={Logo} alt="BigCo Inc. logo" />
+        </div>
         <div className='navBar__components'>
           <input className="navBar__searchArea" placeholder={"Search"} />
           <div className='navBar__buttonAndPicture'>
@@ -19,10 +19,6 @@ function NavBar({ video }) {
             <img className="navBar__profile" src={Profile} alt="BigCo Inc. logo" />
           </div>
         </div>
-      </div>
-      <div className='navBar__background'>
-        <video poster={video.image} className="navBar__heroPicture" controls>
-        </video>
       </div>
     </nav>
   )

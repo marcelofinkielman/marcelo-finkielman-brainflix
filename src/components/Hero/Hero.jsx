@@ -2,17 +2,17 @@ import React from 'react'
 import "./Hero.scss"
 import Likes from "../../assets/icons/Icon-likes.svg"
 import Views from "../../assets/icons/Icon-views.svg"
+import MainVideo from "../MainVideo/MainVideo"
 
 
 
 function Hero({ video }) {
   const videoDate = new Date(video.timestamp)
-
+console.log ({video})
   return (
-
     <div className='hero'>
+    <MainVideo video={video}/>
       <div className="hero__videoDescription">
-      
         <h1 className="hero__title">{video.title}</h1>
         <div className="hero__channelDateViewsLikes">
           <div className='hero__channelAndDate'>
