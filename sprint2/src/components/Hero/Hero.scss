@@ -1,0 +1,130 @@
+@use '../styles/partials/mixins.scss' as *;
+@use '../styles/partials/variables.scss' as *;
+@use '../styles/partials/typography.scss';
+
+
+.hero {
+  
+  &__title {
+    margin-bottom: 16px;
+    margin-top: 32px;
+    font-size: 1.8rem;
+    width: 300px;
+    @include tablet {
+      margin-bottom: 24px;
+      width: 100%;
+      font-size: 2.2rem;
+    }
+    @include desktop {
+      font-size: 1.8rem;
+    }
+    
+  }
+
+  &__videoDescription {
+    @include mobileMargin;
+    font-family: 'Avenir';
+    @include tablet {
+    @include tabletMargin;
+    }
+    @include desktop {
+      margin-right: 0;
+    } 
+  }
+
+  
+
+  &__channelDateViewsLikes {
+    border-bottom: 2px solid $mercury;
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      @include desktop {
+        border-bottom: 2px solid $mercury;
+        
+      }
+    }
+  }
+
+  &__channelAndDate {
+    display: flex;
+    justify-content: row;
+    margin-top: 0;
+    margin-bottom: 12px;
+    
+  }
+
+  &__channel {
+    margin-top: 0;
+    margin-right: 8px
+  }
+
+  &__date {
+    margin-top: 0;
+    color: $silver;
+    font-size: 1.05em;
+    padding-top: 1px;
+  }
+
+  &__viewsAndLikes {
+    margin-bottom: 24px;
+    vertical-align: auto;
+    display: flex;
+    flex-direction: row;
+    @include desktop{
+      padding-right: 30px;
+    }
+  }
+
+  &__viewsIcon {
+    margin-right: 8px;
+  }
+
+  &__views {
+    margin-right: 20px;
+    font-size: 1em;
+    padding-top: 3px;
+    @include tablet {
+      margin-right: 24px;
+      padding-top: 8px;
+    }
+  }
+
+  &__likesIcon {
+    margin-right: 8px;
+  }
+
+  &__likes {
+    font-size: 1em;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    @include tablet {
+      padding-top: 8px;
+    }
+  }
+
+  &__description {
+    margin-top: 24px;
+    margin-bottom: 40px;
+    font-size: .855rem;
+    font-weight: 320;
+    line-height: 24px;
+    @include tablet {
+      font-size: .9rem;
+      width: 535px;
+    }
+  }
+
+  &__iconAndNumber1 {
+    display: flex;
+    flex-direction: row;
+    vertical-align: middle;
+  }
+
+  &__iconAndNumber2 {
+    display: flex;
+    flex-direction: row;
+    vertical-align: middle;
+    margin-left: 20px;
+  }
+}
