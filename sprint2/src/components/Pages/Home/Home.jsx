@@ -8,6 +8,7 @@ import SideVideos from '../../SideVideos/SideVideos'
 import MainVideo from "../../MainVideo/MainVideo"
 import '../../SideVideos/SideVideos.scss'
 import './Home.scss'
+import {Link} from "react-router-dom"
 import axios from 'axios';
 
 
@@ -27,9 +28,8 @@ class Home extends React.Component {
         this.setState({ nextVideos: res.data})
       })
       .then (res => {
-        const firstId = this.state.nextVideos[0].id
-        console.log(firstId)
-        axios.get(APIUrl + endPoint + "/" + firstId + APIKey)
+        const videoId = this.props.videoId ? this.props.videoId : this.state.nextVideos[0].id
+        axios.get(APIUrl + endPoint + "/" + videoId + APIKey)
         .then(res => {
           console.log (res)
           this.setState ({mainVideo: res.data})
@@ -54,13 +54,13 @@ class Home extends React.Component {
               {
                 this.state.nextVideos
                   .filter(video => video.id !== this.state.mainVideo.id)
-                  .map((video) => <SideVideos
-                    key={video.id}
+                  .map((video) => <Link key={video.id} to={`/videos/${video.id}`}>
+                  <SideVideos
                     image={video.image}
                     title={video.title}
                     channel={video.channel}
-                    id={video.id}
-                    updateVideo={this.updateVideo} />)
+                    id={video.id} />
+                    </Link>)
               }
             </section>
           </div>

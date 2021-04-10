@@ -3,7 +3,7 @@ import './SideVideos.scss'
 
 function SideVideos({ image, title, channel, id, updateVideo}) {
   return (
-    <div className='sideVideos__sideVideo' onClick={() => (updateVideo(id))}>
+    <div className='sideVideos__sideVideo'>
       <div className='sideVideos__video'>
         <img width='50px' alt='sideVideo' src={image} className='sideVideos__img'></img>
       </div>
