@@ -20,9 +20,9 @@ function Upload() {
           </div>
         </form>
       </div>
-      <div className='upload_buttons'>
-        <button className='upload__publish-button'>PUBLISH</button>
-        <button className='upload__cancel-button'>CANCEL</button>
+      <div className='upload__buttons'>
+        <button className='upload__publish-button'><h4>PUBLISH</h4></button>
+        <button className='upload__cancel-button'><h4>CANCEL</h4></button>
       </div>
 
     </div>

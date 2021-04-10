@@ -88,12 +88,21 @@
     }
   }
 
+  
+
   &__button {
     @include uploadButton;
     @include tablet {
-    margin-left: 1.5rem;
-    width: 18.75rem;
+    width: 100%;
     font-family: 'Avenir';
+    margin-left: 16px;
+    }
+  }
+
+  &__link {
+    width: 100%;
+    @include tablet {
+      width: 18.75rem;
     }
   }
 

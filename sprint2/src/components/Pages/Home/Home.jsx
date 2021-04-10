@@ -35,6 +35,14 @@ class Home extends React.Component {
           this.setState ({mainVideo: res.data})
         })
       })
+      .catch(err=>{
+        console.error(err)
+        
+      })
+  }
+
+  componentDidUpdate = () => {
+    
   }
 
   render() {
