@@ -5,8 +5,8 @@ import './Upload.scss'
 function Upload(props) {
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    alert('Video Uploaded')
-    props.history.goBack()
+    alert('Thank you. Back to the home page')
+    props.history.push('/')
   }
   return (
     <>
@@ -16,7 +16,7 @@ function Upload(props) {
         <div className='upload__image-and-form'>
           <div className='upload__image-and-label'>
             <label className='upload__label'>VIDEO THUMBNAIL</label>
-            <img className='upload__image' src={Bike} alt='bike'></img>
+            <img className='upload__image' src={Bike} alt='bike'/>
           </div>
           <form className='upload__form'
             onSubmit={(e) => {

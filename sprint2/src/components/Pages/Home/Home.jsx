@@ -2,8 +2,6 @@ import React from 'react';
 import Hero from '../../Hero/Hero';
 import InputComment from '../../InputComment/InputComment';
 import DefaultComments from '../../DefaultComments/DefaultComments';
-import mainVideos from '../../../data/video-details.json';
-import sideVideos from '../../../data/videos.json';
 import SideVideos from '../../SideVideos/SideVideos'
 import MainVideo from "../../MainVideo/MainVideo"
 import '../../SideVideos/SideVideos.scss'
@@ -34,6 +32,7 @@ class Home extends React.Component {
             console.log(res)
             this.setState({ mainVideo: res.data })
           })
+          
       })
       .catch(err => {
         console.error(err)
@@ -41,19 +40,23 @@ class Home extends React.Component {
       })
   }
   componentDidUpdate = () => {
-    if(this.props.videoId !== undefined && this.state.mainVideo.id !== this.props.videoId) {
+     window.scrollTo(0, 0)
+    if (this.props.videoId !== undefined && this.state.mainVideo.id !== this.props.videoId) {
       axios.get(APIUrl + endPoint + "/" + this.props.videoId + APIKey)
-      .then((res => {
-        this.setState ({ mainVideo: res.data })
-      }))
+        .then((res => {
+          this.setState({ mainVideo: res.data })
+        }))
     } if (this.props.videoId === undefined && this.state.mainVideo.id !== this.state.nextVideos[0].id) {
       axios.get(APIUrl + endPoint + "/" + this.state.nextVideos[0].id + APIKey)
-      .then((res => {
-        this.setState ({ mainVideo: res.data })
-      }))
-    }
-    
-  }
+        .then((res => {
+          this.setState({ mainVideo: res.data })
+        }),
+       
+        )
+        .catch(err => {
+          console.error(err)
+    })
+  }}
 
   render() {
     console.log(this.state.mainVideo)
@@ -74,7 +77,7 @@ class Home extends React.Component {
                   .filter(video => video.id !== this.state.mainVideo.id)
                   .map((video) =>
                     <Link className='home__content' key={video.id} to={`/videos/${video.id}`}>
-                      <SideVideos 
+                      <SideVideos
                         image={video.image}
                         title={video.title}
                         channel={video.channel}

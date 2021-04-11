@@ -16,7 +16,7 @@ function NavBar(/* { video } */) {
           </Link>
         </div>
         <div className='navBar__components'>
-          <input className="navBar__searchArea" placeholder={"Search"} />
+          <input className="navBar__searchArea" placeholder="Search" />
           <div className='navBar__buttonAndPicture'>
             <Link to='/Upload' className='navBar__link'>
               <button className="navBar__button">
