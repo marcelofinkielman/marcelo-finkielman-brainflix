@@ -26,9 +26,12 @@
     }
   }
 
+  
+
   &__title {
     color: $silver;
     display: flex;
+    
     
     @include tablet {
       margin-left: .5rem;
@@ -63,10 +66,13 @@
     margin: 0;
     font-size: 1rem;
     margin-bottom: 5px;
+   text-decoration: none;
     
   }
 
   &__videoChannel {
     margin: 0;
+    
   }
+ 
 }

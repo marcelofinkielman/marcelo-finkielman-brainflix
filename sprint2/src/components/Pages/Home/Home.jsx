@@ -8,10 +8,12 @@ import SideVideos from '../../SideVideos/SideVideos'
 import MainVideo from "../../MainVideo/MainVideo"
 import '../../SideVideos/SideVideos.scss'
 import './Home.scss'
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import axios from 'axios';
 
-
+let APIKey = "?api_key=51253446-3783-4af2-b6fe-0482bc5ecb07"
+let APIUrl = "https://project-2-api.herokuapp.com"
+let endPoint = "/videos"
 class Home extends React.Component {
   state = {
     mainVideo: {},
@@ -19,42 +21,50 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    let APIKey = "?api_key=51253446-3783-4af2-b6fe-0482bc5ecb07"
-    let APIUrl = "https://project-2-api.herokuapp.com"
-    let endPoint = "/videos"
+
     axios.get(APIUrl + endPoint + APIKey)
       .then(res => {
         console.log(res.data);
-        this.setState({ nextVideos: res.data})
+        this.setState({ nextVideos: res.data })
       })
-      .then (res => {
+      .then(res => {
         const videoId = this.props.videoId ? this.props.videoId : this.state.nextVideos[0].id
         axios.get(APIUrl + endPoint + "/" + videoId + APIKey)
-        .then(res => {
-          console.log (res)
-          this.setState ({mainVideo: res.data})
-        })
+          .then(res => {
+            console.log(res)
+            this.setState({ mainVideo: res.data })
+          })
       })
-      .catch(err=>{
+      .catch(err => {
         console.error(err)
-        
+
       })
   }
-
   componentDidUpdate = () => {
+    if(this.props.videoId !== undefined && this.state.mainVideo.id !== this.props.videoId) {
+      axios.get(APIUrl + endPoint + "/" + this.props.videoId + APIKey)
+      .then((res => {
+        this.setState ({ mainVideo: res.data })
+      }))
+    } if (this.props.videoId === undefined && this.state.mainVideo.id !== this.state.nextVideos[0].id) {
+      axios.get(APIUrl + endPoint + "/" + this.state.nextVideos[0].id + APIKey)
+      .then((res => {
+        this.setState ({ mainVideo: res.data })
+      }))
+    }
     
   }
 
   render() {
     console.log(this.state.mainVideo)
     return (
-      <div className="app">
+      <div className="home">
         <MainVideo video={this.state.mainVideo.image} />
-        <div className='app__bottomComponents'>
-          <div className='app__commentsComponent'>
+        <div className='home__bottomComponents'>
+          <div className='home__commentsComponent'>
             <Hero video={this.state.mainVideo} />
             <InputComment />
-             <DefaultComments mainVideo={this.state.mainVideo} />
+            <DefaultComments mainVideo={this.state.mainVideo} />
           </div>
           <div>
             <section className='sideVideos'>
@@ -62,12 +72,13 @@ class Home extends React.Component {
               {
                 this.state.nextVideos
                   .filter(video => video.id !== this.state.mainVideo.id)
-                  .map((video) => <Link key={video.id} to={`/videos/${video.id}`}>
-                  <SideVideos
-                    image={video.image}
-                    title={video.title}
-                    channel={video.channel}
-                    id={video.id} />
+                  .map((video) =>
+                    <Link className='home__content' key={video.id} to={`/videos/${video.id}`}>
+                      <SideVideos 
+                        image={video.image}
+                        title={video.title}
+                        channel={video.channel}
+                        id={video.id} />
                     </Link>)
               }
             </section>

@@ -2,6 +2,12 @@
 @use '../../styles/partials/variables.scss' as *;
 @use '../../styles/partials/typography.scss' as *;
 
+.line {
+    border-top: 1px solid $mercury;
+    margin: 0;
+    width: 100%;
+    opacity: 50%;
+  }
 .upload {
   @include mobileMargin;
   @include tablet {
@@ -11,10 +17,28 @@
     @include desktopMargin
   }
 
-  &__title {
-
-  }
   
+
+  &__title {
+    margin-top: 40px; 
+    @include tablet {
+    border-bottom: 3px solid $mercury;
+    margin-bottom: 0;
+    padding-bottom: 30px;
+    }
+    @include desktop {
+      border-bottom: 2px solid $mercury;
+    }
+  }
+
+  &__image-and-form {
+    @include desktop {
+      display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid $mercury;
+    } 
+  }
+
   &__label {
     color: $silver;
     margin-top: 30px;
@@ -35,11 +59,19 @@
       width: 345px;
       height: 180px;
     }
+    @include desktop {
+      margin-right: 16px;
+      height: 196px;
+    }
   }
 
   &__form {
     padding-bottom: 40px;
     border-bottom: 2px solid $mercury;
+    @include desktop {
+      border-bottom: none;
+      width: 100%;
+    }
   }
 
   &__input-boxes {
@@ -63,6 +95,9 @@
     height: 9.5rem;
     &::placeholder {
       font-family: 'Avenir';
+    }
+    @include desktop {
+      height: 90px;
     }
   }
   
