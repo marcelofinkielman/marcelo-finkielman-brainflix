@@ -3,6 +3,7 @@ import Bike from '../../../assets/images/Upload-video-preview.jpg'
 import './Upload.scss'
 
 function Upload(props) {
+  //event makes the publish and cancel button to go back to the home page, with the default video.
   const handleOnSubmit = (e) => {
     e.preventDefault();
     alert('Thank you. Back to the home page')
@@ -35,8 +36,6 @@ function Upload(props) {
             </div>
           </form>
         </div>
-
-
       </div>
     </>
   )

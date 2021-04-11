@@ -42,6 +42,8 @@ class Home extends React.Component {
   componentDidUpdate = () => {
      window.scrollTo(0, 0)
     if (this.props.videoId !== undefined && this.state.mainVideo.id !== this.props.videoId) {
+      console.log(this.props.videoId)
+      console.log(this.state.mainVideo.id !== this.props.videoId)
       axios.get(APIUrl + endPoint + "/" + this.props.videoId + APIKey)
         .then((res => {
           this.setState({ mainVideo: res.data })
