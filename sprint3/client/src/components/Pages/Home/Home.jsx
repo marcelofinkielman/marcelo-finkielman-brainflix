@@ -66,8 +66,8 @@ class Home extends React.Component {
     return (
       <div className="home">
         <MainVideo video={this.state.mainVideo.image} />
-        <div className='home__bottomComponents'>
-          <div className='home__commentsComponent'>
+        <div className='home__bottom-components'>
+          <div className='home__comments-component'>
             <Hero video={this.state.mainVideo} />
             <InputComment />
             <DefaultComments mainVideo={this.state.mainVideo} />

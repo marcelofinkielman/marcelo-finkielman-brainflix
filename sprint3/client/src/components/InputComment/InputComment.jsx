@@ -5,7 +5,7 @@ import Profile from "../../assets/images/Mohan-muruge.jpg"
 function InputComment(props) {
   const handleOnComment = (e) => {
     e.preventDefault();
-    alert('Thank you for adding you comment!')
+    alert('Comment added!')
   }
   return (
     <div className='comments'>
@@ -14,15 +14,15 @@ function InputComment(props) {
           handleOnComment(e)
         }}
         >
-        <div className='comments__divProfile'>
+        <div className='comments__div-profile'>
           <img src={Profile} alt='Muhan' className='comments__profile' />
         </div>
-        <div className='comments__divComments'>
-          <div className='comments__labelAndInput'>
-            <label className='comments__labelComments' >JOIN THE CONVERSATION </label>
+        <div className='comments__div-comments'>
+          <div className='comments__label-and-input'>
+            <label className='comments__label-comments' >JOIN THE CONVERSATION </label>
             <textarea className='comments__input' placeholder='Write comment here.'></textarea>
           </div>
-          <button className='comments__commentButton'>COMMENT</button>
+          <button className='comments__comment-button'>COMMENT</button>
         </div>
       </form>
     </div>

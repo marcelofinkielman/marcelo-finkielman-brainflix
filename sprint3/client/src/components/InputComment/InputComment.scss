@@ -27,7 +27,7 @@
     }
 
     }
-  &__divProfile {
+  &__div-profile {
     display: flex;
     flex-direction: row;
     margin-top: 1.98rem;
@@ -42,7 +42,7 @@
     @include profilePicture;  
   }
     
- &__divComments {
+ &__div-comments {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -53,13 +53,13 @@
     }
  }
 
-  &__labelComments {
+  &__label-comments {
     color: $silver;
     font-weight: bold;
     align-self: baseline;
   }
 
-  &__labelAndImput {
+  &__label-and-imput {
     width: 100%;
   }
   
@@ -68,7 +68,7 @@
     width: 100%;
     padding: 1.25rem 0 0 0.938rem;
     margin-top: 0.625rem;
-    height: 7.5rem;
+    height: 120px;
     resize: none;
         
     &::placeholder {
@@ -80,12 +80,12 @@
       padding-left: 10px;
       } 
       @include tablet {
-        height: 3.125rem;
+        height: 50px;
         padding: 0px;
         }
       }
 
-    &__commentButton {
+    &__comment-button {
       @include uploadButton;
       position: relative;
       color: $white;

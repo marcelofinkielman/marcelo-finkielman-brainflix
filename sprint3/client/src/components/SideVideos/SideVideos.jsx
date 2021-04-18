@@ -3,14 +3,14 @@ import './SideVideos.scss'
 
 function SideVideos({ image, title, channel, id, updateVideo}) {
   return (
-    <div className='sideVideos__sideVideo'>
+    <div className='sideVideos__side-video'>
       <div className='sideVideos__video'>
-        <img width='50px' alt='sideVideo' src={image} className='sideVideos__img'></img>
+        <img width='50px' alt='next videos' src={image} className='sideVideos__img'></img>
       </div>
 
-      <div className='sideVideos__titleAndChannel'>
-        <h3 className="sideVideos__videoTitle">{title}</h3>
-        <p className="sideVideos__videoChannel">{channel}</p>
+      <div className='sideVideos__title-and-channel'>
+        <h3 className="sideVideos__video-title">{title}</h3>
+        <p className="sideVideos__video-channel">{channel}</p>
       </div>
     </div>
   )

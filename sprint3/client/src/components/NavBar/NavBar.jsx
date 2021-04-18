@@ -9,15 +9,15 @@ import { Link } from "react-router-dom"
 function NavBar(/* { video } */) {
   return (
     <nav className='navBar'>
-      <div className='navBar__topComponents'>
-        <div className='navBar__logoContainer'>
+      <div className='navBar__top-components'>
+        <div className='navBar__logo-container'>
           <Link to="/">
             <img className="navBar__logo" src={Logo} alt="BigCo Inc. logo" />
           </Link>
         </div>
         <div className='navBar__components'>
-          <input className="navBar__searchArea" placeholder="Search" />
-          <div className='navBar__buttonAndPicture'>
+          <input className="navBar__search-area" placeholder="Search" />
+          <div className='navBar__button-and-picture'>
             <Link to='/Upload' className='navBar__link'>
               <button className="navBar__button">
                 <img className="navBar__X" src={Upload} alt="BigCo Inc." />

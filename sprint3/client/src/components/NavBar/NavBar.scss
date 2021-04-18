@@ -15,7 +15,7 @@
     justify-content: space-between;
   }
 
-  &__topComponents{
+  &__top-components{
     @include mobileMargin;
     align-items: center;
     @include tablet {
@@ -29,15 +29,15 @@
     }
   }
 
-  &__logoContainer {
+  &__logo-container {
     display: flex;
     justify-content: center;
   }
 
   &__logo {
   
-    width: 7.5rem;
-   height: 3rem;
+    width: 120px;
+   height: 48px;
    
    @include tablet {
      align-self: baseline;
@@ -57,7 +57,7 @@
     }
   }
 
-  &__searchArea {
+  &__search-area {
     @include searchBar;
     background-image: url(../../assets/icons/Icon-search.svg);
     background-position: 0.625rem;
@@ -75,12 +75,12 @@
     }
   }  
 
-  &__buttonAndPicture {
+  &__button-and-picture {
     @include flexcenter;
     width: 100%;
     margin-top: .5rem;
     @include tablet {
-      width: 12.5rem;
+      width: 200px;
       margin-top: 0;
     }
   }
@@ -97,7 +97,7 @@
   &__link {
     width: 100%;
     @include tablet {
-      width: 18.75rem;
+      width: 300px;
     }
   }
 

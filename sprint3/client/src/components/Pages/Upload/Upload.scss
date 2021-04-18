@@ -90,7 +90,7 @@
     @include searchBar;
     padding-left: 15px;
     padding-top: 15px;
-    height: 9.5rem;
+    height: 152px;
     &::placeholder {
       font-family: 'Avenir';
     }
@@ -130,6 +130,6 @@
   &__cancel-button {
     @include uploadButton;
     background-color: white;
-    color: $brainflix-light-blue;
+    color: $button-color;
   }
 }

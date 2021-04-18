@@ -8,7 +8,7 @@ function MainVideo({ video }) {
     <>
       <div className='main'>
         <div className='main__background'>
-          <video poster={video} className="main__heroPicture" controls>
+          <video poster={video} className="main__hero-picture" controls>
           </video>
         </div>
       </div>

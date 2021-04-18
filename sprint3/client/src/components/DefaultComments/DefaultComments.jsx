@@ -10,11 +10,11 @@ function DefaultComments({ mainVideo }) {
         return (
           <>
             <div className="DefaultComments">
-              <div className='DefaultComments__profileContainer'>
+              <div className='DefaultComments__profile-container'>
                 <img src={Profile} alt='Muhan' className='comments__profile' />
               </div>
-              <div className='DefaultComments__nameDateComment'>
-                <div className='DefaultComments__nameDate'>
+              <div>
+                <div className='DefaultComments__name-date'>
                   <h4 className='DefaultComments__name'>{comment.name}</h4>
                   <span className="DefaultComments__date">{commentDate.toLocaleDateString()}</span>
                 </div>
