@@ -5,7 +5,7 @@ function SideVideos({ image, title, channel }) {
   return (
     <div className='sideVideos__side-video'>
       <div className='sideVideos__video'>
-        <img width='50px' alt='next videos' src={image} className='sideVideos__img'></img>
+        <img alt='next videos' src={image} className='sideVideos__img'></img>
       </div>
       <div className='sideVideos__title-and-channel'>
         <h3 className="sideVideos__video-title">{title}</h3>

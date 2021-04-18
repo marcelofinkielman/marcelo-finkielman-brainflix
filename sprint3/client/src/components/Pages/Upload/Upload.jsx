@@ -28,6 +28,9 @@ class Upload extends React.Component {
           this.props.history.push('/')
           alert('Video Updated. Back to the home page')
         })
+        .catch(err => {
+          console.error(err)
+        })
     };
     //event for the cancel button
     const cancelOnClick = (e) => {

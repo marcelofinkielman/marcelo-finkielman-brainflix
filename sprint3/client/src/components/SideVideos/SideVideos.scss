@@ -47,6 +47,9 @@
     min-width: 120px;
     height: 70px;
     border-radius: 5px;
+    @include desktop{
+    width: 50px;
+    }
   }
 
   &__title-and-channel {

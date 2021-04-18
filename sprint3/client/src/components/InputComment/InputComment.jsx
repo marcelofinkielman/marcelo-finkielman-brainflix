@@ -2,7 +2,7 @@ import React from 'react'
 import './InputComment.scss'
 import Profile from "../../assets/images/Mohan-muruge.jpg"
 
-function InputComment(props) {
+function InputComment() {
   const handleOnComment = (e) => {
     e.preventDefault();
     alert('Comment added!')
