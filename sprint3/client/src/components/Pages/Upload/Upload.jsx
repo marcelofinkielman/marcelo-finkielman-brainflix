@@ -21,9 +21,10 @@ class Upload extends React.Component {
     const handleOnSubmit = (e) => {
       e.preventDefault();
       axios.post(APIUrl + endPoint, {
-        image: '/client/src/assets/images/Upload-video-preview.jpg',
+        image: Bike,
         title: e.target.title.value,
-        comment: e.target.comment.value,
+        description: e.target.description.value,
+
       })
         .then(res => {
           console.log(res.data);
@@ -58,7 +59,7 @@ class Upload extends React.Component {
                 }} />
 
                 <label className='upload__label'> ADD A VIDEO DESCRIPTION</label>
-                <textarea name='comment' className='upload__text-area' cols='15' placeholder='Add a description of your video' value={this.state.description} onChange={(e) => {
+                <textarea name='description' className='upload__text-area' cols='15' placeholder='Add a description of your video' value={this.state.description} onChange={(e) => {
                   this.setState({ description: e.target.value })
                 }}></textarea>
               </div>
