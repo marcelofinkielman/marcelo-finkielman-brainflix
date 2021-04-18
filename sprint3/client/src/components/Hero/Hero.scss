@@ -18,7 +18,6 @@
     @include desktop {
       font-size: 1.8rem;
     }
-    
   }
 
   &__video-description {
@@ -31,8 +30,6 @@
       margin-right: 0;
     } 
   }
-
-  
 
   &__channelDateViewsLikes {
     border-bottom: 2px solid $mercury;
@@ -51,7 +48,6 @@
     justify-content: row;
     margin-top: 0;
     margin-bottom: 12px;
-    
   }
 
   &__channel {

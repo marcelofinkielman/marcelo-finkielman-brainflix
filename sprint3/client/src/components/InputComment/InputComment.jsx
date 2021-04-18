@@ -13,20 +13,21 @@ function InputComment(props) {
         onSubmit={(e) => {
           handleOnComment(e)
         }}
-        >
+      >
         <div className='comments__div-profile'>
-          <img src={Profile} alt='Muhan' className='comments__profile' />
+          <img src={Profile} alt='Profile' className='comments__profile' />
         </div>
         <div className='comments__div-comments'>
           <div className='comments__label-and-input'>
-            <label className='comments__label-comments' >JOIN THE CONVERSATION </label>
+            <label className='comments__label-comments' >
+            JOIN THE CONVERSATION 
+            </label>
             <textarea className='comments__input' placeholder='Write comment here.'></textarea>
           </div>
           <button className='comments__comment-button'>COMMENT</button>
         </div>
       </form>
     </div>
-
   )
 }
 

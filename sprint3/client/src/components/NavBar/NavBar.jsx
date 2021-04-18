@@ -20,11 +20,11 @@ function NavBar(/* { video } */) {
           <div className='navBar__button-and-picture'>
             <Link to='/Upload' className='navBar__link'>
               <button className="navBar__button">
-                <img className="navBar__X" src={Upload} alt="BigCo Inc." />
+                <img className="navBar__X" src={Upload} alt="plus sign" />
                 <span className='navBav__upload'>UPLOAD</span>
               </button>
             </Link>
-            <img className="navBar__profile" src={Profile} alt="BigCo Inc. logo" />
+            <img className="navBar__profile" src={Profile} alt="profile" />
           </div>
         </div>
       </div>

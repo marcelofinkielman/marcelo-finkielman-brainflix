@@ -32,14 +32,14 @@ class Home extends React.Component {
             console.log(res)
             this.setState({ mainVideo: res.data })
           })
-          
+
       })
       .catch(err => {
         console.error(err)
       })
   }
   componentDidUpdate = () => {
-     window.scrollTo(0, 0)
+    window.scrollTo(0, 0)
     if (this.props.videoId !== undefined && this.state.mainVideo.id !== this.props.videoId) {
       console.log(this.props.videoId)
       console.log(this.state.mainVideo.id !== this.props.videoId)
@@ -52,14 +52,15 @@ class Home extends React.Component {
         .then((res => {
           this.setState({ mainVideo: res.data })
         }),
-       
+
         )
         .catch(err => {
           console.error(err)
-    })
-  }}
+        })
+    }
+  }
 
-  
+
 
   render() {
     console.log(this.state.mainVideo)

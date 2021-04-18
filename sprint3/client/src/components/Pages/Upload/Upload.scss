@@ -121,10 +121,8 @@
     }
   }
 
-
   &__publish-button {
-    @include uploadButton;
-   
+    @include uploadButton; 
   }
 
   &__cancel-button {

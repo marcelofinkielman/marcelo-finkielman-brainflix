@@ -7,7 +7,6 @@
   align-items: center;
 }
 
-
 @mixin mobile {
   @media (max-width: 767px) {
     @content
@@ -36,7 +35,6 @@
   }
 };
 
-
 @mixin mobileDefault {
   h1 {
     font-size: 1.5rem;
@@ -59,11 +57,9 @@
     }
   }
 
-
-@mixin mobileMargin {
-  margin: 0 1rem;
-}
-
+  @mixin mobileMargin {
+    margin: 0 1rem;
+  }
 
 @mixin leftright {
   margin-left: 0;
@@ -83,7 +79,6 @@
   padding-left: 11.25rem;
   padding-right: 11.25rem;
 }
-
 
 @mixin uploadButton {
   width: 100%;
@@ -111,5 +106,4 @@
     border-color: $silver;
     border: 2px solid $mercury;
     background-color: $white;
-  
 }

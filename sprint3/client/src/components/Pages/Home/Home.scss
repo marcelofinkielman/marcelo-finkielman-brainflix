@@ -8,16 +8,17 @@
     @include desktop{
     display: flex;
   flex-direction: row;
-  margin-left: 120px;
-      
+  margin-left: 120px;  
   }
 }
+
   &__comments-component {
-  @include desktop {
-    width: 700px;
-    border-right: 2px solid $mercury;
+    @include desktop {
+      width: 700px;
+      border-right: 2px solid $mercury;
+    }
   }
-  }
+
   &__content {
     text-decoration: none;
     color: black;

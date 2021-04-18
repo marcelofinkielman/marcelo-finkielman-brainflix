@@ -35,9 +35,8 @@
   }
 
   &__logo {
-  
     width: 120px;
-   height: 48px;
+    height: 48px;
    
    @include tablet {
      align-self: baseline;
