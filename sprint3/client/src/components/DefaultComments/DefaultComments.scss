@@ -1,0 +1,45 @@
+@use '../styles/partials/mixins.scss' as *;
+@use '../styles/partials/variables.scss' as *;
+
+.DefaultComments {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid $mercury;
+  @include mobileMargin;
+  @include tablet {
+    @include tabletMargin;
+    @include desktop {
+      margin-right: 0;
+      padding-right: 30px;
+    }
+  }
+
+
+  &__profileContainer {
+    margin-top: 30px;
+    margin-right: 16px;
+  }
+
+  &__nameDate {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__name {
+    margin-bottom: 0;
+  }
+
+  &__date {
+    margin-bottom: 0;
+    margin-top: 22px;
+    color: $silver;
+  }
+
+  &__comment {
+    font-family: 'Avenir';
+    @include desktop {
+      font-size: 13px;
+    }
+  }
+}

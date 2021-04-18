@@ -1,0 +1,76 @@
+@use '../styles/partials/mixins.scss' as *;
+@use '../styles/partials/variables.scss' as *;
+@use '../styles/partials/typography.scss';
+
+.sideVideos {
+  margin-left: 1rem;
+  @include desktop {
+  }
+
+  
+  &__video {
+  display: flex;
+  justify-content: center;
+  }
+
+  &__sideVideo {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1.5rem;
+    @include tablet {
+      margin-left: .5rem;
+    }
+    @include desktop{
+      justify-content: flex-end;
+      margin-right: 9.75rem;
+    }
+  }
+
+  &__title {
+    color: $silver;
+    display: flex;
+    
+    
+    @include tablet {
+      margin-left: .5rem;
+    }
+    @include desktop {
+      justify-content: flex-end;
+      margin-right: 26rem;
+      margin-top: 48px;
+      margin-bottom: 40px;
+      font-size: 16px;
+    }
+  }
+
+  &__img {
+    margin-right: 1rem;
+    min-width: 7.5rem;
+    height: 4.375rem;
+    border-radius: 5px;
+  }
+
+  &__titleAndChannel {
+    display: flex;
+    flex-direction: column;
+    width: 13.5rem;
+    max-height: 3.125rem;
+    font-family: 'Avenir';
+    padding-top: 5px;
+    
+  }
+
+  &__videoTitle {
+    margin: 0;
+    font-size: 1rem;
+    margin-bottom: 5px;
+   text-decoration: none;
+    
+  }
+
+  &__videoChannel {
+    margin: 0;
+    
+  }
+ 
+}
